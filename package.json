@@ -1,0 +1,24 @@
+{
+  "name": "@klny/function-wrapper",
+  "version": "1.0.0",
+  "description": "wrap sync/async js functions with before and after processing",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klny/function-wrapper"
+  },
+  "keywords": [
+    "javascript",
+    "function",
+    "wrapper",
+    "sync",
+    "async",
+    "before",
+    "after"
+  ],
+  "author": "Karol Nagy",
+  "license": "MIT"
+}
