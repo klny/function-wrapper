@@ -7,7 +7,7 @@ function wrapper(func, before, after) {
     const result = func.apply(this, arguments);
 
     // function is async and returned Promise, run after function in then()
-    if (result.then) {
+    if (result && result.then) {
       return result.then((val) => {
         after(beforeResult, arguments);
         return val;

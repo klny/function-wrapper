@@ -1,8 +1,33 @@
 # function-wrapper
+Wrap sync/async js functions with before and after processing
 
-  wrap sync/async js functions with before and after processing
+## Usage
+Wrap any function and add code to be executed before and after.
 
-## SYNC
+```js
+const wrap = require('@klny/function-wrapper');
+
+const myFunction = () => console.log('my function was executed');
+const before = () => console.log('executing some code before function');
+const after = () => console.log('executing some code after function');
+
+const wrappedFunc = wrap(myFunction, before, after);
+
+wrappedFunc();
+```
+
+```sh
+executing some code before function
+my function was executed
+executing some code after function
+```
+
+ * You have access to wrapped function arguments in before and after functions. 
+ * You can use result of before function execution in after function.
+ * Before/after functions should be sync.
+
+## Examples:
+* SYNC performance wrapper:
 ```js
 const wrap = require('@klny/function-wrapper');
 
@@ -27,7 +52,7 @@ fib(39) took 628 ms
 result of fib: 63245986
 ```
 
-## ASYNC
+* ASYNC performance wrapper:
 ```js
 const wrap = require('@klny/function-wrapper');
 
@@ -56,12 +81,15 @@ result of fib: 75025
 ```bash
 $ npm install @klny/function-wrapper
 ```
+Or just copy ./src/wrapper.js to your project.
 
 ## Features
 
   * sync/async functions support
   * before/after processing
   * preserves function name
+  * access to original function arguments in before/after functions
+  * access to before function results in after function
 
 ## License
 

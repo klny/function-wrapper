@@ -1,5 +1,11 @@
 const wrap = require('../src/wrapper');
 
+const myFunction = () => console.log('my function was executed');
+const before = () => console.log('executing some code before function');
+const after = () => console.log('executing some code after function');
+
+const wrappedFunc = wrap(myFunction, before, after);
+
 function fib(n) {
   if (n <= 1) return n;
   return fib(n-1) + fib(n-2);
@@ -21,6 +27,9 @@ const wrappedAsyncFib = wrap(asyncFib, () => Date.now(), (beforeResult, args) =>
 });
 
 async function test() {
+  wrappedFunc();
+  console.log();
+
   console.log('function name: ' + wrappedFib.name);
   const syncResult = wrappedFib(39);
   console.log('result of fib: ' + syncResult);
