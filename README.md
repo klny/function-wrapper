@@ -26,7 +26,7 @@ executing some code after function
  * You can use result of before function execution in after function.
  * Before/after functions should be sync.
 
-## Examples:
+## Examples
 * SYNC performance wrapper:
 ```js
 const wrap = require('@klny/function-wrapper');
