@@ -23,7 +23,7 @@ executing some code after function
 ```
 
  * You have access to wrapped function arguments in before and after functions. 
- * You can use result of before function execution in after function.
+ * You can use result of before function in after function.
  * Before/after functions should be sync.
 
 ## Examples
