@@ -27,7 +27,7 @@ executing some code after function
  * Before/after functions should be sync.
 
 ## Examples
-* SYNC performance wrapper:
+SYNC performance wrapper:
 ```js
 const wrap = require('@klny/function-wrapper');
 
@@ -52,7 +52,7 @@ fib(39) took 628 ms
 result of fib: 63245986
 ```
 
-* ASYNC performance wrapper:
+ASYNC performance wrapper:
 ```js
 const wrap = require('@klny/function-wrapper');
 
@@ -75,6 +75,18 @@ console.log('result of fib: ' + asyncResult);
 function name: asyncFib
 asyncFib(25) took 44 ms
 result of fib: 75025
+```
+
+## Conditional wrapping
+Parameter "enabled" can be used to conditionally enable/disable function wrapping.
+```js
+const wrap = require('@klny/function-wrapper');
+
+function myFunction() {
+  ...
+}
+
+module.exports = wrap(myFunction, before, after, process.env === 'development');
 ```
 
 ## Installation

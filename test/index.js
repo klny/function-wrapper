@@ -1,10 +1,11 @@
-const wrap = require('../src/wrapper');
+const wrap = require('../index');
 
 const myFunction = () => console.log('my function was executed');
 const before = () => console.log('executing some code before function');
 const after = () => console.log('executing some code after function');
 
 const wrappedFunc = wrap(myFunction, before, after);
+const wrappedFunc2 = wrap(myFunction, before, after, false);
 
 function fib(n) {
   if (n <= 1) return n;
@@ -39,6 +40,15 @@ async function test() {
   console.log('function name: ' + wrappedAsyncFib.name);
   const asyncResult = await wrappedAsyncFib(25);
   console.log('result of fib: ' + asyncResult);
+
+  console.log('');
+  console.log('(begin) test switch - enabled');
+  wrappedFunc();
+  console.log('(end) test switch - enabled');
+  console.log('');
+  console.log('(begin) test switch - disabled');
+  wrappedFunc2();
+  console.log('(end) test switch - disabled');
 }
 
 module.exports = test();

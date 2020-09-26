@@ -1,4 +1,14 @@
-function wrapper(func, before, after) {
+/**
+ * Wraps function "func" with "before" and "after" functions when "enabled".
+ * @param  {Function} func     Function to be wrapped
+ * @param  {Function} before   Function to be executed before wrapped function
+ * @param  {Function} after    Function to be executed after wrapped function
+ * @param  {Boolean}  enabled  Switch to conditionally enable/disable wrapper
+ * @return {Function}          Wrapped function
+ */
+function wrapper(func, before, after, enabled = true) {
+  if (!enabled) return func;
+
   function f() {
     // run before wrapped function
     const beforeResult = before(arguments);
