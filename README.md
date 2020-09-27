@@ -88,7 +88,7 @@ There are two optional parameters to control wrapper's functionality.
 Wrap-time condition to skip wrapping completely. Original function will be returned when false.  
 Can be used to add wrapper's functionality in development environment or in debug mode only.
 ```js
-// will wrap function only in development
+// will wrap function in development only
 module.exports = wrap(myFunction, before, after, process.env === 'development');
 ```
 
@@ -98,7 +98,7 @@ Skips before/after processing during function execution when false.
 Cond is a function with access to arguments. Should return boolean.
  
 ```js
-// will execute before/after functions only if called with argument > 10
+// will execute before/after function only when called with argument > 10
 module.exports = wrap(myFunction, before, after, true, (args) => args[0] > 10);
  ```
 
