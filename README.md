@@ -82,8 +82,8 @@ Fibonacci result: 63245986.
  * Wrapped function has the same name as your original function. 
 
 ## Conditional wrapping
-There are two optional parameters to control wrapper's functionality.  
-  
+There are two optional parameters to control wrapper's functionality.
+
 ###wrap [true/false]
 Wrap-time condition to skip wrapping completely. Original function will be returned when false.  
 Can be used to add wrapper's functionality in development environment or in debug mode only.
