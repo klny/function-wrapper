@@ -84,7 +84,7 @@ Fibonacci result: 63245986.
 ## Conditional wrapping
 There are two optional parameters to control wrapper's functionality.
 
-###wrap [true/false]
+### wrap [true/false]  
 Wrap-time condition to skip wrapping completely. Original function will be returned when false.  
 Can be used to add wrapper's functionality in development environment or in debug mode only.
 ```js
@@ -92,7 +92,7 @@ Can be used to add wrapper's functionality in development environment or in debu
 module.exports = wrap(myFunction, before, after, process.env === 'development');
 ```
 
-###cond [function returning true/false]
+### cond [function returning true/false]
 Execution-time condition.  
 Skips before/after processing during function execution when false.  
 Cond is a function with access to arguments. Should return boolean.
