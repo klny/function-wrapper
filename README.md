@@ -2,8 +2,8 @@
 Wrap sync/async js functions with before and after processing
 
 ## Usage
-Import package for example as "wrapper", or copy src/wrapper to your project.
-Add functions to be executed before/after your function execution.  
+Import package for example as "wrapper", or copy src/wrapper to your project.  
+Add functions to be executed before/after your function.  
 
 Imported "wrapper" is a function:
 ```js
@@ -13,7 +13,7 @@ function wrapper(func, before, after, wrap = true, cond = (args) => true);
  * before - function to be executed before your function
  * after - function to be executed after your function
  * wrap - optional, boolean to control wrapping (default true - always wrap)
- * cond - optional, function to control wrapper during execution (default true - always execute wrapper's functionality)
+ * cond - optional, function to control wrapper during execution (default true - always execute)
 
 ## Examples
 ### Wrap any sync/async function...
@@ -47,9 +47,10 @@ wrappedFunc(21);
 ```
 ```sh
 Testing wrappedFunc(21).
- - Executing some code before your function. Your function was called with arguments: [{"0":21}]. Returning 7.
+ - Executing some code before your function. Your function was called with arguments: {"0":21}. Returning 7.
  - Your function was executed with x = 21. Returning 21.
- - Executing some code after your function. Your function was called with arguments: [{"0":21}]. Before function returned 7.
+ - Executing some code after your function. Your function was called with arguments: {"0":21}. Before function returned 7.
+Your function result: 21.
 ```
 
  * You have access to wrapped function arguments in before and after functions. 

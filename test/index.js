@@ -39,7 +39,7 @@ const perfTest = wrap(fib, () => Date.now(), (startedAt, args) => {
 async function test() {
 
   console.log('Testing wrappedFunc(21).');
-  wrappedFunc(21);
+  console.log('Your function result: ' + wrappedFunc(21) + '.');
 
   console.log('');
   console.log('Testing performance of fib(39).');
