@@ -7,7 +7,7 @@ Add functions to be executed before/after your function.
 
 Imported "wrapper" is a function:
 ```js
-function wrapper(func, before, after, wrap = true, cond = (args) => true);
+function wrapper(func, before, after, wrap = true, cond = (args) => true) {};
 ```
  * func - your function to be wrapped 
  * before - function to be executed before your function
@@ -27,14 +27,14 @@ function yourFunction(x) {
 }
 
 // this will be executed before your function
-function before(...args) {
-  console.log(' - Executing some code before your function. Your function was called with arguments: ' + JSON.stringify(args) + '. Returning 7.');
+function before(args) {
+  console.log(' - Executing some code before your function. Arguments: ' + JSON.stringify(args) + '. Returning 7.');
   return 7;
 }
 
 // this will be executed after your function
-function after(beforeResult, ...args) {
-  console.log(' - Executing some code after your function. Your function was called with arguments: ' + JSON.stringify(args) + '. Before function returned ' + beforeResult + '.');
+function after(beforeResult, args) {
+  console.log(' - Executing some code after your function. Before function returned: ' + beforeResult + '. Arguments: ' + JSON.stringify(args) + '.');
 }
 
 // wrapped version of your function
@@ -47,15 +47,14 @@ wrappedFunc(21);
 ```
 ```sh
 Testing wrappedFunc(21).
- - Executing some code before your function. Your function was called with arguments: {"0":21}. Returning 7.
+ - Executing some code before your function. Arguments: {"0":21}. Returning 7.
  - Your function was executed with x = 21. Returning 21.
- - Executing some code after your function. Your function was called with arguments: {"0":21}. Before function returned 7.
+ - Executing some code after your function. Before function returned: 7. Arguments: {"0":21}.
 Your function result: 21.
 ```
 
  * You have access to wrapped function arguments in before and after functions. 
  * You can use result of before function in after function.
- * Before/after functions should be sync.
 
 ### Test function performance with wrapper
 ```js

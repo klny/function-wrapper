@@ -8,13 +8,13 @@ function yourFunction(x) {
 
 // this will be executed before your function
 function before(args) {
-  console.log(' - Executing some code before your function. Your function was called with arguments: ' + JSON.stringify(args) + '. Returning 7.');
+  console.log(' - Executing some code before your function. Arguments: ' + JSON.stringify(args) + '. Returning 7.');
   return 7;
 }
 
 // this will be executed after your function
 function after(beforeResult, args) {
-  console.log(' - Executing some code after your function. Your function was called with arguments: ' + JSON.stringify(args) + '. Before function returned ' + beforeResult + '.');
+  console.log(' - Executing some code after your function. Before function returned: ' + beforeResult + '. Arguments: ' + JSON.stringify(args) + '.');
 }
 
 // wrapped version of your function
