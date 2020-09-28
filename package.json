@@ -1,6 +1,6 @@
 {
   "name": "@klny/function-wrapper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "wrap sync/async js functions with before and after processing",
   "main": "index.js",
   "scripts": {
