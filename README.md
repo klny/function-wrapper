@@ -2,8 +2,9 @@
 Wrap sync/async js functions with before and after processing
 
 ## Usage
-Import package for example as "wrapper", or copy src/wrapper to your project.  
-Add functions to be executed before/after your function.  
+1) Install or copy src/wrapper to your project.  
+2) Import package for example as "wrapper".  
+3) Use "wrapper" to add functions to be executed before/after your function.  
 
 Imported "wrapper" is a function:
 ```js

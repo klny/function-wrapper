@@ -19,8 +19,8 @@ function after(beforeResult, args) {
 
 // wrapped version of your function
 const wrappedFunc = wrap(yourFunction, before, after);
-module.exports = wrappedFunc;
 
+// wrapped with conditions
 const wrappedFunc2 = wrap(yourFunction, before, after, false);
 const wrappedFunc3 = wrap(yourFunction, before, after, true, (args) => args[0] >= 10);
 
@@ -47,11 +47,11 @@ async function test() {
 
   console.log('');
   console.log('test with wrap = true');
-  wrappedFunc();
+  wrappedFunc(7);
 
   console.log('');
   console.log('test with wrap = false');
-  wrappedFunc2();
+  wrappedFunc2(33);
 
   console.log('');
   console.log('test with condition args[0] >= 10, x = 0');
